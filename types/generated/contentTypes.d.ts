@@ -406,12 +406,13 @@ export interface ApiSpecialitySpeciality extends Struct.CollectionTypeSchema {
 export interface ApiTaskLinkTaskLink extends Struct.CollectionTypeSchema {
   collectionName: 'task_links';
   info: {
+    description: '';
     displayName: 'TaskLink';
     pluralName: 'task-links';
     singularName: 'task-link';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
