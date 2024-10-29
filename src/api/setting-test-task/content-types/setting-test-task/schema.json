@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "setting_test_tasks",
+  "info": {
+    "singularName": "setting-test-task",
+    "pluralName": "setting-test-tasks",
+    "displayName": "SettingTestTask",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Тестовое задание"
+    },
+    "comment": {
+      "type": "richtext"
+    },
+    "videoInstructions": {
+      "type": "string"
+    }
+  }
+}
