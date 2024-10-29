@@ -369,6 +369,39 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSettingTestTaskSettingTestTask
+  extends Struct.SingleTypeSchema {
+  collectionName: 'setting_test_tasks';
+  info: {
+    description: '';
+    displayName: 'SettingTestTask';
+    pluralName: 'setting-test-tasks';
+    singularName: 'setting-test-task';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    comment: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::setting-test-task.setting-test-task'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 \u0437\u0430\u0434\u0430\u043D\u0438\u0435'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoInstructions: Schema.Attribute.String;
+  };
+}
+
 export interface ApiSpecialitySpeciality extends Struct.CollectionTypeSchema {
   collectionName: 'specialities';
   info: {
@@ -979,6 +1012,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::setting-test-task.setting-test-task': ApiSettingTestTaskSettingTestTask;
       'api::speciality.speciality': ApiSpecialitySpeciality;
       'api::task-link.task-link': ApiTaskLinkTaskLink;
       'api::task.task': ApiTaskTask;

@@ -22,16 +22,21 @@ export default factories.createCoreController(
 
         const uuid = crypto.randomUUID();
 
-       const response = strapi.documents("api::task-link.task-link").create({
+        const response = strapi.documents("api::task-link.task-link").create({
           data: {
             uuid: uuid,
             validity: true,
             task: tasks[Math.round(Math.random() * (tasks.length - 1))],
           },
         });
-        console.log(tasks[Math.round(Math.random() * (tasks.length - 1))])
-        return response
+
+        
+
+        return response;
       },
+
+      
+
     };
   }
 );
